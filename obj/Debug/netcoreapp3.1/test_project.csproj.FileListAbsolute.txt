@@ -1,0 +1,13 @@
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.exe
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.deps.json
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.runtimeconfig.json
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.runtimeconfig.dev.json
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.dll
+C:\Users\Toyzz\Desktop\test_project\bin\Debug\netcoreapp3.1\test_project.pdb
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.csprojAssemblyReference.cache
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.AssemblyInfoInputs.cache
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.AssemblyInfo.cs
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.csproj.CoreCompileInputs.cache
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.dll
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.pdb
+C:\Users\Toyzz\Desktop\test_project\obj\Debug\netcoreapp3.1\test_project.genruntimeconfig.cache
