@@ -22,9 +22,10 @@ namespace test_project.tasks
         }
 
         public void Run() {
-            _tree.Search(_root, _target, Direction.Predecessor, out var pre);
-            _tree.Search(_root, _target, Direction.Successor, out var suc);
+            var pre = _tree.Find(_root, _target, Direction.Predecessor);
+            var suc = _tree.Find(_root, _target, Direction.Successor);
 
+            Console.WriteLine($"Search Target: {_target}");
             if(pre == null) {
                 Console.WriteLine($"Predecessor was not found");
             } else {
@@ -75,27 +76,27 @@ namespace test_project.tasks
                 Traverse(root.Right);
             }
 
-            public void Search(Node root, int value, Direction direction, out Node node) {
-                node = null;
+            public Node Find(Node root, int value, Direction direction) {
+                if(root == null) return null;
+
+                Node node = null;
                 if(root.Value == value) {
                     switch(direction) {
-                        case Direction.Predecessor:
+                        case Direction.Predecessor when root.Left != null:
                             node = FindPredecessor(root);
                             break;
-                        case Direction.Successor:
+                        case Direction.Successor when root.Right != null:
                             node = FindSuccessor(root);
                             break;
                     }
 
-                    return;
-                }
+                    return node;
+                }   
 
                 if(root.Value > value) {
-                    node = root;
-                    Search(root.Left, value, direction, out node);
+                    return Find(root.Left, value, direction);
                 } else {
-                    node = root;
-                    Search(root.Right, value, direction, out node);
+                    return Find(root.Right, value, direction);
                 }
             }
 
@@ -103,16 +104,14 @@ namespace test_project.tasks
                 Node tmp = node.Left;
                 if(tmp == null) return tmp;
 
-                while(tmp.Right != null)
+                while(tmp != null && tmp.Right != null)
                     tmp = tmp.Right;
                 return tmp;
             }
 
             private Node FindSuccessor(Node node) {
                 Node tmp = node.Right;
-                if(tmp == null) return tmp;
-
-                while(tmp.Left != null)
+                while(tmp != null && tmp.Left != null)
                     tmp = tmp.Left;
                 return tmp;
             }
