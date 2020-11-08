@@ -25,11 +25,12 @@ namespace test_project
             }
 
             var task = (ITask)Activator.CreateInstance(typ);
+            task.Init(args.Skip(1).ToArray());
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            task.Run(args.Skip(1).ToArray());
+            task.Run();
 
             stopWatch.Stop();
             Console.WriteLine($"{typ.Name} took {stopWatch.ElapsedMilliseconds}ms to process");

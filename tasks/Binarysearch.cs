@@ -8,30 +8,33 @@ namespace test_project.tasks
     [Task()]
     public class Binarysearch : ITask {
         private int[] _input;
+        private int _target;
 
-        public void Run(params string[] args) {
-            var searchTarget = int.Parse(args[0]);
+        public void Init(params string[] args) {
+            _target =  int.Parse(args[0]);
             _input = args.Skip(1).Select(int.Parse).ToArray();
+        }
 
+        public void Run() {
             qs(0, _input.Length - 1);
             
-            var res = search(searchTarget);
+            var res = search();
             if(res == null) {
-                Console.Error.WriteLine($"Failed to find {searchTarget} in {string.Join(", ", _input)}");
+                Console.Error.WriteLine($"Failed to find {_target} in {string.Join(", ", _input)}");
                 return;
             }
 
-            Console.WriteLine($"Found search result at index {res} in {string.Join(", ", _input)}");
+            Console.WriteLine($"Found target {_target} as index {res} in {string.Join(", ", _input)}");
         }
 
         // Nullable so if we didn't find a result we can return null
-        private int? search(int target) {
+        private int? search() {
             int left = 0;
-            int right = _input.Length - 1;
+            int right = _input.Length - 1; 
             while(left <= right) {
                 var mid = (left + right) / 2;
-                if(_input[mid] == target) return mid;
-                else if(target < _input[mid]) right = mid - 1;
+                if(_input[mid] == _target) return mid;
+                else if(_target < _input[mid]) right = mid - 1;
                 else left = mid + 1;
             }
 

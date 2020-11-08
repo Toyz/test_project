@@ -7,10 +7,12 @@ namespace test_project.tasks {
     public class QuickSort : ITask {
         private int[] _input;
 
-        public void Run(params string[] args) {
+        public void Init(params string[] args) {
             _input = args.Select(int.Parse).ToArray();
-            Console.WriteLine($"Unsorted: {string.Join(", ", _input)}");
+        }
 
+        public void Run() {
+            Console.WriteLine($"Unsorted: {string.Join(", ", _input)}");
             qs(0, _input.Length - 1);
             Console.WriteLine($"Sorted: {string.Join(", ", _input)}");
         }
