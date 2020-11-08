@@ -25,7 +25,6 @@ namespace test_project.tasks
             _tree.Search(_root, _target, Direction.Predecessor, out var pre);
             _tree.Search(_root, _target, Direction.Successor, out var suc);
 
-            // This can crash if pre/suc is null which is completely possible
             if(pre == null) {
                 Console.WriteLine($"Predecessor was not found");
             } else {
