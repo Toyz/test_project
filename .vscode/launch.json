@@ -12,8 +12,8 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/test_project.dll",
             "args": [
-                "BinarySearch",
-                "15",
+                "BinarySearchTree",
+                "-2",
                 "-2", "-5", "1", "0", "15", "-10", "35"
             ],
             "cwd": "${workspaceFolder}",
