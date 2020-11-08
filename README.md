@@ -3,7 +3,9 @@ A simple repo for me to test algorithms and stuff for interviews and other stuff
 
 # How to run
 ```
-dotnet run quicksort -2 -5 1 0 15 -10 35
+> git clone git@github.com:Toyz/test_project.git
+> cd test_project
+> dotnet run quicksort -2 -5 1 0 15 -10 35
 ```
 This should output
 ```
